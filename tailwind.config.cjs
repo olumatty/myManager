@@ -1,5 +1,6 @@
+const defaultTheme = require('tailwindcss/defaultTheme');
+
 /** @type {import('tailwindcss').Config} */
-import defaultTheme from 'tailwindcss/defaultTheme';
 module.exports = {
   content: [
     "./src/app/**/*.{js,ts,jsx,tsx}",
@@ -10,8 +11,15 @@ module.exports = {
       fontFamily: {
         heading: ['var(--font-archivo)', ...defaultTheme.fontFamily.sans],
         body: ['var(--font-inter)', ...defaultTheme.fontFamily.sans],
+      },
+      colors: {
+        primarytext: "#303030",
+      },
+      backgroundImage: {
+        PrimaryBtn: "#39383f",
+        SecondaryBtn: "#855fff",
+      },
     },
   },
-  },
-  plugins: [aspectRatio],
+  plugins: [],
 };
