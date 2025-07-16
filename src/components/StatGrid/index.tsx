@@ -76,7 +76,7 @@ const AnimatedNumber: React.FC<AnimatedNumberProps> = ({
 const StatGrid: React.FC = () => {
   const statData = [
     { target: 50000, label: "Active Users", suffix: "+" },
-    { target: 1000000, label: "Tasks Completed", suffix: "+" },
+    { target: 200000, label: "Tasks Completed", suffix: "+" },
     { target: 99, label: "User Satisfaction", suffix: "%" },
     { number: "24/7", label: "Support Available" },
   ];
@@ -94,7 +94,7 @@ const StatGrid: React.FC = () => {
                   suffix={stat.suffix}
                 />
               ) : (
-                <div className="text-4xl font-bold text-white mb-2">
+                <div className="text-xl md:text-4xl font-bold text-white mb-2">
                   {stat.number}
                 </div>
               )}
