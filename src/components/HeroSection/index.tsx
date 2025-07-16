@@ -14,9 +14,9 @@ const HeroSection: React.FC<HeroSectionProps> = ({
   backgroundImage2 = CalendarBg,
 }) => {
   return (
-    <div className="w-full max-h-[1400px] bg-gradient-to-tr relative border-t border-gray-300  from-[#f4f0f8] to-[#eff7f9] text-[#303030]">
+    <div className="w-full bg-gradient-to-tr relative border-t border-gray-300  from-[#f4f0f8] to-[#eff7f9] text-[#303030]">
       <div
-        className="absolute inset-0"
+        className="absolute inset-0 z-0"
         style={{
           backgroundImage: `url(${
             typeof backgroundImage === "string"
@@ -27,11 +27,10 @@ const HeroSection: React.FC<HeroSectionProps> = ({
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat",
         }}
-      >
-        <Image src={backgroundImage} alt="Image1" />
-      </div>
-      <div className="flex flex-col items-center justify-center h-full">
-        <div className="max-w-4xl text-center">
+      ></div>
+
+      <div className="relative z-10 flex flex-col items-center justify-between h-full py-16 px-6 max-w-5xl mx-auto">
+        <div className="text-center flex flex-col items-center justify-center flex-grow">
           <h1 className="text-3xl md:text-5xl font-bold mb-4 mt-20 leading-[1.2] animate-pulse">
             Take Control of your time and Achieve More With my
             <span className="text-[#855fff]">Manager</span>
@@ -60,7 +59,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
             </Button>
           </div>
         </div>
-        <div className="w-full max-h-[300px] px-6">
+        <div className="w-full flex justify-center mt-12">
           <Image
             src={backgroundImage2}
             alt="Calendar"
