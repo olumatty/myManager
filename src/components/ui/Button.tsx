@@ -14,7 +14,7 @@ export const Button: React.FC<ButtonProps> = ({
 
   const variantClasses = {
     primary: "bg-[#39383f] text-[#fefefe] px-4 py-2 rounded-lg",
-    secondary: "bg-secondaryBtn text-gray-100 px-4 py-2 rounded-lg",
+    secondary: "bg-[#6d47ff] text-gray-100 px-4 py-2 rounded-lg",
     tertiary: "bg-transparent",
   };
 

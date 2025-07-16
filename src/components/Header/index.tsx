@@ -24,13 +24,13 @@ const Header = () => {
     setIsOpen(false);
   }, []);
   return (
-    <div className="w-full bg-[#f6f6f6] sticky z-999  flex justify-between items-center p-4 md:py-4 md:px-10">
+    <div className="w-full bg-[#f6f6f6] sticky top-0 z-[9999]  flex justify-between items-center p-4 md:py-4 md:px-10">
       <div className="flex items-center space-x-12">
         <div className="">
           <button className="flex items-center gap-2 text-xl md:text-2xl font-semibold cursor-pointer">
-            <GiExtraTime className="h-8 w-8 text-purple-500" />
-            <span className="text-gray-700 text-base">
-              my<span className="text-purple-500">Manager</span>
+            <GiExtraTime className="h-8 w-8 text-[#6d47ff]" />
+            <span className="text-gray-700 text-xl  md:text-base">
+              my<span className="text-[#6d47ff]">Manager</span>
             </span>
           </button>
         </div>
