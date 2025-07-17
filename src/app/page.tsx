@@ -3,6 +3,7 @@ import Hero from "@/components/Hero";
 import HeroSection from "@/components/HeroSection";
 import Service from "@/components/Service";
 import SatatGrid from "@/components/StatGrid";
+import Testimonial from "@/components/Testimonial";
 import React from "react";
 
 const page = () => {
@@ -13,6 +14,7 @@ const page = () => {
       <Hero />
       <Service />
       <SatatGrid />
+      <Testimonial />
     </div>
   );
 };

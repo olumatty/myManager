@@ -53,7 +53,6 @@ const AnimatedNumber: React.FC<AnimatedNumberProps> = ({
       }
     };
 
-    // Start the animation
     animationFrameId.current = requestAnimationFrame(animate);
     return () => {
       if (animationFrameId.current) {
@@ -65,7 +64,7 @@ const AnimatedNumber: React.FC<AnimatedNumberProps> = ({
   const formattedNumber = currentNumber.toLocaleString();
 
   return (
-    <div ref={ref} className="text-4xl font-bold text-white mb-2">
+    <div ref={ref} className="text-3xl sm:text-4xl font-bold text-white mb-2">
       {formattedNumber}
       {suffix}
     </div>
@@ -76,15 +75,16 @@ const AnimatedNumber: React.FC<AnimatedNumberProps> = ({
 const StatGrid: React.FC = () => {
   const statData = [
     { target: 50000, label: "Active Users", suffix: "+" },
-    { target: 200000, label: "Tasks Completed", suffix: "+" },
+    { target: 20000, label: "Tasks Completed", suffix: "+" },
     { target: 99, label: "User Satisfaction", suffix: "%" },
     { number: "24/7", label: "Support Available" },
   ];
 
   return (
-    <section className="py-16 bg-gradient-to-r from-blue-600 to-purple-600">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+    <section className="mt-12 bg-gradient-to-r from-blue-600 to-purple-600">
+      <div className="max-w-7xl py-16 mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-2 gap-y-8 md:grid-cols-4 gap-x-4 sm:gap-x-8">
+          {" "}
           {statData.map((stat, index) => (
             <div key={index} className="text-center">
               {typeof stat.target === "number" ? (
@@ -94,11 +94,14 @@ const StatGrid: React.FC = () => {
                   suffix={stat.suffix}
                 />
               ) : (
-                <div className="text-xl md:text-4xl font-bold text-white mb-2">
+                <div className="text-3xl sm:text-4xl font-bold text-white mb-2">
+                  {" "}
                   {stat.number}
                 </div>
               )}
-              <div className="text-blue-100">{stat.label}</div>
+              <div className="text-blue-100 text-sm sm:text-base">
+                {stat.label}
+              </div>
             </div>
           ))}
         </div>
