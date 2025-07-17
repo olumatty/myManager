@@ -4,7 +4,7 @@ import { FaCaretRight } from "react-icons/fa";
 
 const Testimonial: React.FC = () => {
   return (
-    <div className="pb-[20px] mt-12 md:pb-[80px] lg:pb-[140px]">
+    <div className=" mt-12">
       <div className="w-full py-8 block max-w-[1400px] my-0 mx-auto px-[20px] sm:px-[30px] lg:px-[40px]">
         {" "}
         <div className="flex gap-y-[30px] px-20 md:gap-y-0 lg:gap-x-[60px] items-start flex-col lg:flex-row lg:justify-between">
@@ -75,7 +75,7 @@ const Testimonial: React.FC = () => {
                     As a freelancer juggling multiple clients, I was constantly
                     underestimating project hours and losing money. This time
                     tracking app changed everything. The automatic
-                    categorization means I don't have to remember to start
+                    categorization means I don&rsquo;t have to remember to start
                     timers, and the detailed reports show me exactly where my
                     time goes. I can finally bill clients accurately and
                     confidently. In just one month, I identified my most
@@ -109,8 +109,8 @@ const Testimonial: React.FC = () => {
                     during client work, and the goal-setting tools kept me
                     accountable to my priorities. What impressed me most was how
                     intuitive it felt - no learning curve, just immediate
-                    insights. I've reclaimed 10 hours per week for high-value
-                    consulting work
+                    insights. I&rsquo;ve reclaimed 10 hours per week for
+                    high-value consulting work
                   </p>
                 </div>
                 <div className="flex gap-x-[10px] mt-[30px] sm:mt-[40px] items-center text-[14px] sm:text-[16px] leading-[1.4]">

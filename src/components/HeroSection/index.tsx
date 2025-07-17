@@ -14,7 +14,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
   backgroundImage2 = CalendarBg,
 }) => {
   return (
-    <div className="w-full bg-gradient-to-tr relative border-t border-gray-300  from-[#f4f0f8] to-[#eff7f9] text-[#303030]">
+    <div className="w-full bg-gradient-to-tr  from-[#f4f0f8] to-[#eff7f9] relative border-t border-gray-300 text-[#303030]">
       <div
         className="absolute inset-0 z-0"
         style={{

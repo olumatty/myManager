@@ -1,3 +1,4 @@
+import Cta from "@/components/Cta";
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import HeroSection from "@/components/HeroSection";
@@ -15,6 +16,7 @@ const page = () => {
       <Service />
       <SatatGrid />
       <Testimonial />
+      <Cta />
     </div>
   );
 };
