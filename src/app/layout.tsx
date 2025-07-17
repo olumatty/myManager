@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Inter as InterFont, Archivo as ArchivoFont } from "next/font/google";
 import "./globals.css";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 
 const inter = InterFont({ subsets: ["latin"] });
 const archivo = ArchivoFont({
@@ -31,7 +33,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${inter.className} ${archivo.className}} antialiased`}>
+        <Header />
         {children}
+        <Footer />
       </body>
     </html>
   );
