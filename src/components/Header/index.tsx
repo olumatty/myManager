@@ -9,8 +9,8 @@ const Header = () => {
   const navLinks = [
     { name: "Features", link: "#home" },
     { name: "Resources", link: "#" },
-    { name: "Pricing", link: "/Pricing" },
-    { name: "About Us", link: "/About" },
+    { name: "Pricing", link: "/pricing" },
+    { name: "About Us", link: "/about" },
   ];
 
   const handleOutsideClick = useCallback((e: MouseEvent) => {
