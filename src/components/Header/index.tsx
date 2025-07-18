@@ -8,9 +8,9 @@ const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
   const navLinks = [
     { name: "Features", link: "#home" },
-    { name: "Resources", link: "#about" },
+    { name: "Resources", link: "#" },
     { name: "Pricing", link: "/Pricing" },
-    { name: "About Us", link: "#project" },
+    { name: "About Us", link: "/About" },
   ];
 
   const handleOutsideClick = useCallback((e: MouseEvent) => {
@@ -23,6 +23,7 @@ const Header = () => {
     }
     setIsOpen(false);
   }, []);
+
   return (
     <div className="w-full bg-[#f6f6f6] sticky top-0 z-[9999]  flex justify-between items-center p-4 md:py-4 md:px-10">
       <div className="flex items-center space-x-12">
