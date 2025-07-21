@@ -24,7 +24,7 @@ const PasswordInput: FC<PasswordInputProps> = ({
 
   return (
     <div className={className}>
-      <div className="flex relative items-center bg-white border border-gray-300 p-3 rounded-md focus-within:ring-gray-700 focus-within:border-gray-800 transition duration-200">
+      <div className="flex relative items-center bg-white border border-gray-300 px-4 py-2 rounded-md focus-within:ring-gray-700 focus-within:border-gray-800 transition duration-200">
         <span>
           <CiLock size={18} />
         </span>
