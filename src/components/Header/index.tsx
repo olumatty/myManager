@@ -3,6 +3,7 @@ import React, { useCallback, useState } from "react";
 import { Button } from "../ui/Button";
 import { GiExtraTime } from "react-icons/gi";
 import { LuMenu, LuCircleX } from "react-icons/lu";
+import { useRouter } from "next/navigation";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -12,6 +13,8 @@ const Header = () => {
     { name: "Pricing", link: "/pricing" },
     { name: "About Us", link: "/about" },
   ];
+
+  const router = useRouter();
 
   const handleOutsideClick = useCallback((e: MouseEvent) => {
     const target = (e.target as Element) || null;
@@ -24,11 +27,21 @@ const Header = () => {
     setIsOpen(false);
   }, []);
 
+  const handleGoBack = () => {
+    router.back();
+  };
+
+  const handleLogin = () => {
+    router.push("/login");
+  };
   return (
     <div className="w-full bg-[#f6f6f6] sticky top-0 z-[9999]  flex justify-between items-center p-4 md:py-4 md:px-10">
       <div className="flex items-center space-x-12">
         <div className="">
-          <button className="flex items-center gap-2 text-xl md:text-2xl font-semibold cursor-pointer">
+          <button
+            onClick={handleGoBack}
+            className="flex items-center gap-2 text-xl md:text-2xl font-semibold cursor-pointer"
+          >
             <GiExtraTime className="h-8 w-8 text-[#6d47ff]" />
             <span className="text-gray-700 text-xl  md:text-base">
               my<span className="text-[#6d47ff]">Manager</span>
@@ -56,6 +69,7 @@ const Header = () => {
         <Button
           variant="primary"
           className="hidden md:block hover:bg-opacity-70 transition-colors duration-300"
+          onClick={handleLogin}
         >
           Get Started
           {/*<MdOutlineArrowRight className="h-5 w-5 text-[#fefefe] " />*/}
@@ -105,6 +119,7 @@ const Header = () => {
               <Button
                 variant="primary"
                 className="w-full text-base items-center justify-center flex"
+                onClick={handleLogin}
               >
                 Get Started
               </Button>
