@@ -6,10 +6,11 @@ import PasswordInput from "@/components/ui/PasswordInput";
 import Image from "next/image";
 import { useRouter, usePathname } from "next/navigation";
 
-const Login = () => {
+const SignUp = () => {
   const [password, setPassword] = useState("");
   const [email, setEmail] = useState("");
-  const [name, setName] = useState("");
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
   const [message, setMessage] = useState("");
@@ -94,22 +95,41 @@ const Login = () => {
             <p className="text-green-500 text-sm text-center">{message}</p>
           )}
 
-          <form onSubmit={handleLogin} className="space-y-4">
-            <div>
-              <label
-                htmlFor="email"
-                className="block text-sm font-medium text-gray-700"
-              >
-                Full Name
-              </label>
-              <input
-                id="name"
-                type="text"
-                className="mt-1 block w-full border border-gray-300 px-4 py-2 rounded-md outline-none focus:ring-black focus:border-black transition duration-200 placeholder:text-sm placeholder:text-gray-400"
-                placeholder="Enter your full name"
-                value={email}
-                onChange={(e) => setName(e.target.value)}
-              />
+          <form onSubmit={handleLogin} className="space-y-6">
+            <div className="flex items-center gap-4">
+              <div>
+                <label
+                  htmlFor="firstName"
+                  className="block text-sm font-medium text-gray-700"
+                >
+                  First Name
+                </label>
+                <input
+                  id="name"
+                  type="text"
+                  className="mt-1 block w-full border border-gray-300 px-4 py-2 rounded-md outline-none focus:ring-black focus:border-black transition duration-200 placeholder:text-sm placeholder:text-gray-400"
+                  placeholder="Enter your full name"
+                  value={email}
+                  onChange={(e) => setFirstName(e.target.value)}
+                />
+              </div>
+
+              <div>
+                <label
+                  htmlFor="lastName"
+                  className="block text-sm font-medium text-gray-700"
+                >
+                  Last Name
+                </label>
+                <input
+                  id="lastName"
+                  type="text"
+                  className="mt-1 block w-full border border-gray-300 px-4 py-2 rounded-md outline-none focus:ring-black focus:border-black transition duration-200 placeholder:text-sm placeholder:text-gray-400"
+                  placeholder="Enter your last name"
+                  value={lastName}
+                  onChange={(e) => setLastName(e.target.value)}
+                />
+              </div>
             </div>
 
             <div>
@@ -134,7 +154,7 @@ const Login = () => {
                 htmlFor="password"
                 className="block text-sm font-medium text-gray-700"
               >
-                Password
+                Password(min 8 char)
               </label>
               <PasswordInput
                 id="password"
@@ -144,30 +164,30 @@ const Login = () => {
               />
             </div>
 
-            <p className="text-xs sm:text-sm text-center text-gray-500 mt-6">
-              By continuing, you agree with our{" "}
-              <span className="underline text-gray-700 hover:text-black cursor-pointer">
-                Terms of Service
-              </span>{" "}
-              and{" "}
-              <span className="underline text-gray-700 hover:text-black cursor-pointer">
-                Privacy Policy
-              </span>
-              .
-            </p>
-
             <button
               type="submit"
-              className="w-full py-2  bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold rounded-md mt-4 hover:bg-gray-800 transition-colors duration-200"
+              className="w-full py-2 mt-10 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold rounded-md  hover:bg-gray-800 transition-colors duration-200"
               disabled={loading}
             >
-              Log In
+              Sign in
             </button>
           </form>
+          <p className="text-xs sm:text-sm text-center text-gray-500 mt-6">
+            By Joining, you agree with our
+            <span className="underline text-[#6d47ff] hover:opacity-80 cursor-pointer">
+              {" "}
+              Terms{" "}
+            </span>
+            and{" "}
+            <span className="underline text-[#6d47ff] hover:opacity-80 cursor-pointer">
+              Privacy Policy
+            </span>
+            .
+          </p>
         </div>
       </div>
     </div>
   );
 };
 
-export default Login;
+export default SignUp;

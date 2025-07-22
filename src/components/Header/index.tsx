@@ -34,6 +34,10 @@ const Header = () => {
   const handleLogin = () => {
     router.push("/login");
   };
+
+  const handleSignup = () => {
+    router.push("/signup");
+  };
   return (
     <div className="w-full bg-[#f6f6f6] sticky top-0 z-[9999]  flex justify-between items-center p-4 md:py-4 md:px-10">
       <div className="flex items-center space-x-12">
@@ -63,16 +67,19 @@ const Header = () => {
       </div>
 
       <div className="flex gap-4 items-center">
-        <Button variant="tertiary" className="hidden md:block">
+        <Button
+          onClick={handleLogin}
+          variant="tertiary"
+          className="hidden md:block"
+        >
           Sign in
         </Button>
         <Button
           variant="primary"
           className="hidden md:block hover:bg-opacity-70 transition-colors duration-300"
-          onClick={handleLogin}
+          onClick={handleSignup}
         >
           Get Started
-          {/*<MdOutlineArrowRight className="h-5 w-5 text-[#fefefe] " />*/}
         </Button>
       </div>
 
