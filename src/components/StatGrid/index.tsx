@@ -1,6 +1,6 @@
-"use client";
-import React, { useState, useEffect, useRef } from "react";
-import { useInView } from "react-intersection-observer";
+'use client';
+import React, { useState, useEffect, useRef } from 'react';
+import { useInView } from 'react-intersection-observer';
 
 interface AnimatedNumberProps {
   targetValue: number;
@@ -11,7 +11,7 @@ interface AnimatedNumberProps {
 const AnimatedNumber: React.FC<AnimatedNumberProps> = ({
   targetValue,
   duration = 2000,
-  suffix = "",
+  suffix = '',
 }) => {
   const [currentNumber, setCurrentNumber] = useState(0);
   const animationFrameId = useRef<number | null>(null);
@@ -64,7 +64,7 @@ const AnimatedNumber: React.FC<AnimatedNumberProps> = ({
   const formattedNumber = currentNumber.toLocaleString();
 
   return (
-    <div ref={ref} className="text-3xl sm:text-4xl font-bold text-white mb-2">
+    <div ref={ref} className="mb-2 text-3xl font-bold text-white sm:text-4xl">
       {formattedNumber}
       {suffix}
     </div>
@@ -74,32 +74,32 @@ const AnimatedNumber: React.FC<AnimatedNumberProps> = ({
 // Your main StatGrid component
 const StatGrid: React.FC = () => {
   const statData = [
-    { target: 50000, label: "Active Users", suffix: "+" },
-    { target: 20000, label: "Tasks Completed", suffix: "+" },
-    { target: 99, label: "User Satisfaction", suffix: "%" },
-    { number: "24/7", label: "Support Available" },
+    { target: 50000, label: 'Active Users', suffix: '+' },
+    { target: 20000, label: 'Tasks Completed', suffix: '+' },
+    { target: 99, label: 'User Satisfaction', suffix: '%' },
+    { number: '24/7', label: 'Support Available' },
   ];
 
   return (
     <section className="mt-12 bg-gradient-to-r from-blue-600 to-purple-600">
-      <div className="max-w-7xl py-16 mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-2 gap-y-8 md:grid-cols-4 gap-x-4 sm:gap-x-8">
-          {" "}
+      <div className="mx-auto max-w-7xl py-16 px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-2 gap-y-8 gap-x-4 sm:gap-x-8 md:grid-cols-4">
+          {' '}
           {statData.map((stat, index) => (
             <div key={index} className="text-center">
-              {typeof stat.target === "number" ? (
+              {typeof stat.target === 'number' ? (
                 <AnimatedNumber
                   targetValue={stat.target}
                   duration={2500}
                   suffix={stat.suffix}
                 />
               ) : (
-                <div className="text-3xl sm:text-4xl font-bold text-white mb-2">
-                  {" "}
+                <div className="mb-2 text-3xl font-bold text-white sm:text-4xl">
+                  {' '}
                   {stat.number}
                 </div>
               )}
-              <div className="text-blue-100 text-sm sm:text-base">
+              <div className="text-sm text-blue-100 sm:text-base">
                 {stat.label}
               </div>
             </div>

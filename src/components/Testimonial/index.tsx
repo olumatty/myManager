@@ -1,50 +1,50 @@
-import React from "react";
-import BackgroundImage from "@/components/Assets/stripebg.svg";
-import { FaCaretRight } from "react-icons/fa";
+import React from 'react';
+import BackgroundImage from '@/components/Assets/stripebg.svg';
+import { FaCaretRight } from 'react-icons/fa';
 
 const Testimonial: React.FC = () => {
   return (
-    <div className=" mt-12">
-      <div className="w-full py-8 block max-w-[1400px] my-0 mx-auto px-[20px] sm:px-[30px] lg:px-[40px]">
-        {" "}
-        <div className="flex gap-y-[30px] px-20 md:gap-y-0 lg:gap-x-[60px] items-start flex-col lg:flex-row lg:justify-between">
-          <h2 className="text-2xl text-[#6d47ff] leading-tight w-full max-w-[500px] md:text-4xl font-bold">
+    <div className="mt-12">
+      <div className="my-0 mx-auto block w-full max-w-[1400px] py-8 px-[20px] sm:px-[30px] lg:px-[40px]">
+        {' '}
+        <div className="flex flex-col items-start gap-y-[30px] px-20 md:gap-y-0 lg:flex-row lg:justify-between lg:gap-x-[60px]">
+          <h2 className="w-full max-w-[500px] text-2xl font-bold leading-tight text-[#6d47ff] md:text-4xl">
             People believe in myManager&rsquo;s power
           </h2>
           <div className="w-full max-w-[490px]">
-            <p className="mb-4 text-gray-700 text-sm md:text-base">
-              {" "}
+            <p className="mb-4 text-sm text-gray-700 md:text-base">
+              {' '}
               Discover why myManager is the go-to choice for individuals and
               teams looking to enhance their productivity and time management.
               Join the community of satisfied users who have transformed their
               workflows and achieved their goals with our innovative platform.
             </p>
-            <div className="flex flex-col sm:flex-row gap-y-4 sm:gap-y-0 gap-x-6 items-start sm:items-center">
-              {" "}
-              <div className="flex gap-x-[10px] items-center cursor-pointer transition-all duration-200 ease-linear">
+            <div className="flex flex-col items-start gap-y-4 gap-x-6 sm:flex-row sm:items-center sm:gap-y-0">
+              {' '}
+              <div className="flex cursor-pointer items-center gap-x-[10px] transition-all duration-200 ease-linear">
                 <p className="text-sm md:text-base">
                   See all myManager reviews
-                </p>{" "}
+                </p>{' '}
                 <FaCaretRight className="transition-all duration-200 ease-in-out hover:translate-x-2" />
               </div>
-              <div className="flex gap-x-[10px] items-center cursor-pointer transition-all duration-200 ease-linear">
-                <p className="text-sm md:text-base">Share your experience</p>{" "}
+              <div className="flex cursor-pointer items-center gap-x-[10px] transition-all duration-200 ease-linear">
+                <p className="text-sm md:text-base">Share your experience</p>{' '}
                 <FaCaretRight className="transition-all duration-200 ease-in-out hover:translate-x-2" />
               </div>
             </div>
           </div>
         </div>
         <div>
-          <div className="border border-[#242424] py-[20px] px-[20px] mt-[30px] rounded-[20px]">
+          <div className="mt-[30px] rounded-[20px] border border-[#242424] py-[20px] px-[20px]">
             <div
-              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 border border-[#6d47ff] overflow-hidden relative rounded-[20px] gap-[20px] lg:gap-[30px] p-[20px] sm:p-[30px] bg-cover bg-no-repeat" /* Consolidated gap, added padding for the grid container */
+              className="relative grid grid-cols-1 gap-[20px] overflow-hidden rounded-[20px] border border-[#6d47ff] bg-cover bg-no-repeat p-[20px] sm:p-[30px] md:grid-cols-2 lg:grid-cols-3 lg:gap-[30px]" /* Consolidated gap, added padding for the grid container */
               style={{ backgroundImage: `url(${BackgroundImage})` }}
             >
               {/* Testimonial Cards */}
 
-              <div className="border border-[#242424] flex  transition-all duration-400 ease-in-out hover:bg-gray-200 px-[20px] py-[20px] sm:px-[30px] sm:py-[30px] flex-col justify-between rounded-[20px] cursor-pointer leading-[1.4]">
-                {" "}
-                <div className="flex items-start flex-col ">
+              <div className="duration-400 flex cursor-pointer flex-col justify-between rounded-[20px] border border-[#242424] px-[20px] py-[20px] leading-[1.4] transition-all ease-in-out hover:bg-gray-200 sm:px-[30px] sm:py-[30px]">
+                {' '}
+                <div className="flex flex-col items-start">
                   <p className="text-[15px] sm:text-base">
                     This time tracking tool changed everything. The intuitive
                     interface made it effortless to log my activities, and the
@@ -55,9 +55,9 @@ const Testimonial: React.FC = () => {
                     hours.
                   </p>
                 </div>
-                <div className="flex gap-x-[10px] mt-[30px] sm:mt-[40px] items-center text-[14px] sm:text-[16px] leading-[1.4]">
-                  {" "}
-                  <div className="w-12 h-12 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full flex items-center justify-center text-white font-bold">
+                <div className="mt-[30px] flex items-center gap-x-[10px] text-[14px] leading-[1.4] sm:mt-[40px] sm:text-[16px]">
+                  {' '}
+                  <div className="flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-r from-blue-600 to-purple-600 font-bold text-white">
                     <p>JP</p>
                   </div>
                   <div className="text-[#9e9e9e]">
@@ -67,11 +67,11 @@ const Testimonial: React.FC = () => {
                 </div>
               </div>
 
-              <div className="border border-[#242424] flex transition-all duration-400 ease-in-out hover:bg-gray-200 px-[20px] py-[20px] sm:px-[30px] sm:py-[30px] flex-col justify-between rounded-[20px] cursor-pointer leading-[1.4]">
-                {" "}
-                <div className="flex items-start flex-col ">
+              <div className="duration-400 flex cursor-pointer flex-col justify-between rounded-[20px] border border-[#242424] px-[20px] py-[20px] leading-[1.4] transition-all ease-in-out hover:bg-gray-200 sm:px-[30px] sm:py-[30px]">
+                {' '}
+                <div className="flex flex-col items-start">
                   <p className="text-[15px] sm:text-base">
-                    {" "}
+                    {' '}
                     As a freelancer juggling multiple clients, I was constantly
                     underestimating project hours and losing money. This time
                     tracking app changed everything. The automatic
@@ -84,9 +84,9 @@ const Testimonial: React.FC = () => {
                     smoother too.
                   </p>
                 </div>
-                <div className="flex gap-x-[10px] mt-[30px] sm:mt-[40px] items-center text-[14px] sm:text-[16px] leading-[1.4]">
-                  {" "}
-                  <div className="w-12 h-12 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full flex items-center justify-center text-white font-bold">
+                <div className="mt-[30px] flex items-center gap-x-[10px] text-[14px] leading-[1.4] sm:mt-[40px] sm:text-[16px]">
+                  {' '}
+                  <div className="flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-r from-blue-600 to-purple-600 font-bold text-white">
                     <p>MR</p>
                   </div>
                   <div className="text-[#9e9e9e]">
@@ -96,12 +96,12 @@ const Testimonial: React.FC = () => {
                 </div>
               </div>
 
-              <div className="border border-[#242424] flex transition-all duration-400 ease-in-out hover:bg-gray-200  px-[20px] py-[20px] sm:px-[30px] sm:py-[30px] flex-col justify-between rounded-[20px] cursor-pointer leading-[1.4]">
-                {" "}
+              <div className="duration-400 flex cursor-pointer flex-col justify-between rounded-[20px] border border-[#242424] px-[20px] py-[20px] leading-[1.4] transition-all ease-in-out hover:bg-gray-200 sm:px-[30px] sm:py-[30px]">
+                {' '}
                 {/* Adjusted padding */}
-                <div className="flex items-start flex-col ">
+                <div className="flex flex-col items-start">
                   <p className="text-[15px] sm:text-base">
-                    {" "}
+                    {' '}
                     I thought I was managing my time well until this app opened
                     my eyes. The analytics revealed I was spending 2.5 hours
                     daily on email and admin tasks that could be streamlined.
@@ -113,9 +113,9 @@ const Testimonial: React.FC = () => {
                     high-value consulting work
                   </p>
                 </div>
-                <div className="flex gap-x-[10px] mt-[30px] sm:mt-[40px] items-center text-[14px] sm:text-[16px] leading-[1.4]">
-                  {" "}
-                  <div className="w-12 h-12 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full flex items-center justify-center text-white font-bold">
+                <div className="mt-[30px] flex items-center gap-x-[10px] text-[14px] leading-[1.4] sm:mt-[40px] sm:text-[16px]">
+                  {' '}
+                  <div className="flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-r from-blue-600 to-purple-600 font-bold text-white">
                     <p>AF</p>
                   </div>
                   <div className="text-[#9e9e9e]">

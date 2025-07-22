@@ -3,6 +3,6 @@ export interface ButtonProps {
   className?: string;
   onClick?: () => void;
   disabled?: boolean;
-  variant?: "primary" | "secondary" | "tertiary";
+  variant?: 'primary' | 'secondary' | 'tertiary';
   iconRight?: React.ReactNode;
 }

@@ -1,15 +1,15 @@
-import React from "react";
-import { Button } from "../ui/Button";
+import React from 'react';
+import { Button } from '../ui/Button';
 
 const Cta: React.FC = () => {
   return (
-    <div className="bg-gradient-to-tr max-w-6xl mx-auto border  from-[#f4f0f8] to-[#eff7f9] mt-12 px-4 shadow-xl drop-shadow-2xl rounded-lg">
-      <div className="py-12 max-w-4xl flex flex-col items-center justify-center mx-auto ">
-        <h2 className="text-base md:text-3xl font-bold text-center mb-4">
+    <div className="mx-auto mt-12 max-w-6xl rounded-lg border bg-gradient-to-tr from-[#f4f0f8] to-[#eff7f9] px-4 shadow-xl drop-shadow-2xl">
+      <div className="mx-auto flex max-w-4xl flex-col items-center justify-center py-12">
+        <h2 className="mb-4 text-center text-base font-bold md:text-3xl">
           By improving your timing,you can bring your ideas to life more
           effectively and have a work-life balance.
         </h2>
-        <p className="text-sm md:text-base mb-8 ">
+        <p className="mb-8 text-sm md:text-base">
           Discover The Magic of Timing : Empower Your Ideas and Expressions for
           Maximum Impact
         </p>

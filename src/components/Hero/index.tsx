@@ -1,10 +1,10 @@
-import React from "react";
+import React from 'react';
 
 const Hero: React.FC = () => {
   return (
-    <div className="mt-12 px-4 bg-gradient-to-r from-blue-600 to-purple-600 border-t border-gray-300  text-[#303030]">
-      <div className="py-6 max-w-6xl flex items-center mx-auto">
-        <p className="text-[#f6f6f6] text-sm md:base font-semibold">
+    <div className="mt-12 border-t border-gray-300 bg-gradient-to-r from-blue-600 to-purple-600 px-4 text-[#303030]">
+      <div className="mx-auto flex max-w-6xl items-center py-6">
+        <p className="md:base text-sm font-semibold text-[#f6f6f6]">
           &ldquo;Are you tired of feeling like there are never enough hours in
           the day? Do you struggle to keep up with your tasks and deadlines? If
           so, you&rsquo;re not alone. Many people find themselves overwhelmed by
