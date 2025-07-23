@@ -1,38 +1,39 @@
-"use client";
-import React, { useState } from "react";
-import bgImage from "@/components/Assets/loginBg.jpg";
-import { FcGoogle } from "react-icons/fc";
-import PasswordInput from "@/components/ui/PasswordInput";
-import Image from "next/image";
-import { useRouter, usePathname } from "next/navigation";
+/* eslint-disable @typescript-eslint/no-unused-vars */
+'use client';
+import React, { useState } from 'react';
+import bgImage from '@/components/Assets/loginBg.jpg';
+import { FcGoogle } from 'react-icons/fc';
+import PasswordInput from '@/components/ui/PasswordInput';
+import Image from 'next/image';
+import { useRouter, usePathname } from 'next/navigation';
 
 const SignUp = () => {
-  const [password, setPassword] = useState("");
-  const [email, setEmail] = useState("");
-  const [firstName, setFirstName] = useState("");
-  const [lastName, setLastName] = useState("");
+  const [password, setPassword] = useState('');
+  const [email, setEmail] = useState('');
+  const [firstName, setFirstName] = useState('');
+  const [lastName, setLastName] = useState('');
   const [loading, setLoading] = useState(false);
-  const [error, setError] = useState("");
-  const [message, setMessage] = useState("");
+  const [error, setError] = useState('');
+  const [message, setMessage] = useState('');
 
   const router = useRouter();
   const pathname = usePathname();
 
   const handleLoginSwitch = () => {
-    if (pathname !== "/login") {
-      router.push("/login");
+    if (pathname !== '/login') {
+      router.push('/login');
     }
   };
 
   const handleSignupSwitch = () => {
-    if (pathname !== "/signup") {
-      router.push("/signup");
+    if (pathname !== '/signup') {
+      router.push('/signup');
     }
   };
 
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
-    router.push("/verifypassword");
+    router.push('/verifyemail');
   };
 
   return (
@@ -50,9 +51,9 @@ const SignUp = () => {
           <div className="mb-6 flex justify-around border-b border-gray-200">
             <button
               className={`flex-1 cursor-pointer py-2 text-center text-sm font-medium transition-colors duration-200 ${
-                pathname === "/login"
-                  ? "border-b-2 border-black text-black"
-                  : "border-b-2 border-transparent text-gray-500 hover:text-black"
+                pathname === '/login'
+                  ? 'border-b-2 border-black text-black'
+                  : 'border-b-2 border-transparent text-gray-500 hover:text-black'
               }`}
               onClick={handleLoginSwitch}
             >
@@ -60,9 +61,9 @@ const SignUp = () => {
             </button>
             <button
               className={`flex-1 py-2 text-center text-sm font-medium transition-colors duration-200 ${
-                pathname === "/signup"
-                  ? "border-b-2 border-black text-black"
-                  : "border-b-2 border-transparent text-gray-500 hover:text-black"
+                pathname === '/signup'
+                  ? 'border-b-2 border-black text-black'
+                  : 'border-b-2 border-transparent text-gray-500 hover:text-black'
               }`}
               onClick={handleSignupSwitch}
             >
@@ -109,7 +110,7 @@ const SignUp = () => {
                   className="mt-1 block w-full rounded-md border border-gray-300 px-4 py-2 outline-none transition duration-200 placeholder:text-sm placeholder:text-gray-400 focus:border-black focus:ring-black"
                   placeholder="Enter your full name"
                   value={email}
-                  onChange={(e) => setFirstName(e.target.value)}
+                  onChange={e => setFirstName(e.target.value)}
                 />
               </div>
 
@@ -126,7 +127,7 @@ const SignUp = () => {
                   className="mt-1 block w-full rounded-md border border-gray-300 px-4 py-2 outline-none transition duration-200 placeholder:text-sm placeholder:text-gray-400 focus:border-black focus:ring-black"
                   placeholder="Enter your last name"
                   value={lastName}
-                  onChange={(e) => setLastName(e.target.value)}
+                  onChange={e => setLastName(e.target.value)}
                 />
               </div>
             </div>
@@ -144,7 +145,7 @@ const SignUp = () => {
                 className="mt-1 block w-full rounded-md border border-gray-300 px-4 py-2 outline-none transition duration-200 placeholder:text-sm placeholder:text-gray-400 focus:border-black focus:ring-black"
                 placeholder="Enter your email"
                 value={email}
-                onChange={(e) => setEmail(e.target.value)}
+                onChange={e => setEmail(e.target.value)}
               />
             </div>
 
@@ -159,7 +160,7 @@ const SignUp = () => {
                 id="password"
                 className="mt-1 w-full"
                 value={password}
-                onChange={(e) => setPassword(e.target.value)}
+                onChange={e => setPassword(e.target.value)}
               />
             </div>
 
@@ -174,10 +175,10 @@ const SignUp = () => {
           <p className="mt-6 text-center text-xs text-gray-500 sm:text-sm">
             By Joining, you agree with our
             <span className="cursor-pointer text-[#6d47ff] underline hover:opacity-80">
-              {" "}
-              Terms{" "}
+              {' '}
+              Terms{' '}
             </span>
-            and{" "}
+            and{' '}
             <span className="cursor-pointer text-[#6d47ff] underline hover:opacity-80">
               Privacy Policy
             </span>

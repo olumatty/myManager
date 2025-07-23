@@ -1,25 +1,19 @@
-'use client';
-import React, { useState } from 'react';
-import bgImage from '@/components/Assets/loginBg.jpg';
-import { FcGoogle } from 'react-icons/fc';
-import PasswordInput from '@/components/ui/PasswordInput';
-import Image from 'next/image';
-import { useRouter, usePathname } from 'next/navigation';
+"use client";
+import React, { useState } from "react";
+import bgImage from "@/components/Assets/loginBg.jpg";
+import Image from "next/image";
+import { useRouter } from "next/navigation";
 
 const ForgetPassword = () => {
-  const [password, setPassword] = useState('');
-  const [email, setEmail] = useState('');
-  const [firstName, setFirstName] = useState('');
-  const [lastName, setLastName] = useState('');
+  const [email, setEmail] = useState("");
   const [loading, setLoading] = useState(false);
-  const [error, setError] = useState('');
-  const [message, setMessage] = useState('');
+  const [error, setError] = useState("");
+  const [message, setMessage] = useState("");
 
   const router = useRouter();
-  const pathname = usePathname();
 
   const handleCancel = () => {
-    router.push('/login');
+    router.push("/login");
   };
 
   const handleLogin = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -27,7 +21,7 @@ const ForgetPassword = () => {
   };
 
   const handleForgetPassword = async () => {
-    router.push('/newpassword');
+    router.push("/verifypassword");
   };
 
   return (
@@ -59,7 +53,7 @@ const ForgetPassword = () => {
                 className="mt-1 block w-full rounded-md border border-gray-300 px-4 py-2 outline-none transition duration-200 placeholder:text-sm placeholder:text-gray-400 focus:border-black focus:ring-black"
                 placeholder="Enter your email"
                 value={email}
-                onChange={e => setEmail(e.target.value)}
+                onChange={(e) => setEmail(e.target.value)}
               />
             </div>
 

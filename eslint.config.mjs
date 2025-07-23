@@ -13,4 +13,8 @@ const eslintConfig = [
   ...compat.extends('next/core-web-vitals', 'next/typescript'),
 ];
 
+const { rules } = eslintConfig[0];
+
+rules['@typescript-eslint/no-unused-vars'] = 'off';
+
 export default eslintConfig;

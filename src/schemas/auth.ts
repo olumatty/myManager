@@ -16,4 +16,34 @@ export const loginSchema = z.object({
     password: z.string().min(8, "Password must be at least 8 characters long"),
   }),
 });
-``;
+export const forgetpasswordSchema = z.object({
+  body: z.object({
+    email: z.string().email("Invalid email address"),
+  }),
+});
+
+export const newpasswordSchema = z.object({
+  body: z.object({
+    oldpassword: z
+      .string()
+      .min(8, "Password must be at least 8 characters long"),
+    newpassword: z
+      .string()
+      .min(8, "Password must be at least 8 characters long"),
+  }),
+});
+
+export const verifyemailSchema = z.object({
+  body: z.object({
+    email: z.string().email("Invalid email address"),
+    code: z.string().min(6, "Code must be at least 6 characters long"),
+  }),
+});
+
+export const verifyPasswordSchema = z.object({
+  body: z.object({
+    email: z.string().email("Invalid email address"),
+    code: z.string().min(6, "Code must be at least 6 characters long"),
+    password: z.string().min(8, "Password must be at least 8 characters long"),
+  }),
+});

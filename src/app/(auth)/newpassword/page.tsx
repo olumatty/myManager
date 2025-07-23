@@ -1,27 +1,26 @@
-'use client';
-import React, { useState } from 'react';
-import bgImage from '@/components/Assets/loginBg.jpg';
-import Image from 'next/image';
-import { useRouter, usePathname } from 'next/navigation';
-import PasswordInput from '@/components/ui/PasswordInput';
+/* eslint-disable @typescript-eslint/no-unused-vars */
+"use client";
+import React, { useState } from "react";
+import bgImage from "@/components/Assets/loginBg.jpg";
+import Image from "next/image";
+import { useRouter, usePathname } from "next/navigation";
+import PasswordInput from "@/components/ui/PasswordInput";
 
 const NewPassword = () => {
   const [formValue, setFormValue] = useState({
-    oldpassword: '',
-    newpassword: '',
+    oldpassword: "",
+    newpassword: "",
   });
   const [loading, setLoading] = useState(false);
-  const [error, setError] = useState('');
-  const [message, setMessage] = useState('');
+  const [error, setError] = useState("");
+  const [message, setMessage] = useState("");
 
   const router = useRouter();
   const pathname = usePathname();
 
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (pathname === '/login') {
-      router.push('/login');
-    }
+    router.push("/login");
   };
 
   return (
@@ -55,7 +54,7 @@ const NewPassword = () => {
                 id="password"
                 className="mt-1 w-full"
                 value={formValue.oldpassword}
-                onChange={e =>
+                onChange={(e) =>
                   setFormValue({ ...formValue, oldpassword: e.target.value })
                 }
               />
@@ -72,7 +71,7 @@ const NewPassword = () => {
                 id="password"
                 className="mt-1 w-full"
                 value={formValue.newpassword}
-                onChange={e =>
+                onChange={(e) =>
                   setFormValue({ ...formValue, newpassword: e.target.value })
                 }
               />

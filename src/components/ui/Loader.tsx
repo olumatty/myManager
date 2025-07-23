@@ -1,5 +1,5 @@
-import React from "react";
-import { LuLoader } from "react-icons/lu";
+import React from 'react';
+import { LuLoader } from 'react-icons/lu';
 
 const Loader = () => {
   return (

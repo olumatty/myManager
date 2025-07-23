@@ -1,27 +1,29 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
-"use client";
-import React, { useEffect, useRef, useState } from "react";
-import bgImage from "@/components/Assets/loginBg.jpg";
-import Image from "next/image";
-import { useRouter } from "next/navigation";
-import { CiCircleCheck } from "react-icons/ci";
-import Loader from "@/components/ui/Loader";
+'use client';
+import React, { useEffect, useRef, useState } from 'react';
+import bgImage from '@/components/Assets/loginBg.jpg';
+import Image from 'next/image';
+import { useRouter, usePathname } from 'next/navigation';
+import { CiCircleCheck } from 'react-icons/ci';
 
-const VerifyPassword = () => {
-  const [otp, setOtp] = useState(["", "", "", "", "", ""]);
+import Loader from '@/components/ui/Loader';
+
+const ForgetPassword = () => {
+  const [otp, setOtp] = useState(['', '', '', '', '', '']);
   const [isVerifying, setIsVerifying] = useState(false);
-  const [verificationStatus, setVerificationStatus] = useState("");
+  const [verificationStatus, setVerificationStatus] = useState('');
   const [countdown, setCountdown] = useState(300); // 5 minutes in seconds
   const [canResend, setCanResend] = useState(false);
   const inputRefs = useRef<(HTMLInputElement | null)[]>([]);
-  const [error, setError] = useState("");
-  const [message, setMessage] = useState("");
+  const [error, setError] = useState('');
+  const [message, setMessage] = useState('');
 
   const router = useRouter();
+  const pathname = usePathname();
 
   useEffect(() => {
     const timer = setInterval(() => {
-      setCountdown((prev) => {
+      setCountdown(prev => {
         if (prev <= 0) {
           setCanResend(true);
           return 0;
@@ -38,7 +40,7 @@ const VerifyPassword = () => {
   const formatTime = (seconds: number) => {
     const minutes = Math.floor(seconds / 60);
     const remainingSeconds = seconds % 60;
-    return `${minutes.toString().padStart(2, "0")}:${remainingSeconds.toString().padStart(2, "0")}`;
+    return `${minutes.toString().padStart(2, '0')}:${remainingSeconds.toString().padStart(2, '0')}`;
   };
 
   const handleInputChange = (index: number, value: string) => {
@@ -57,7 +59,7 @@ const VerifyPassword = () => {
     e: React.KeyboardEvent<HTMLInputElement>,
     index: number,
   ) => {
-    if (e.key === "Backspace" && !otp[index] && index > 0) {
+    if (e.key === 'Backspace' && !otp[index] && index > 0) {
       inputRefs.current[index - 1]?.focus();
     }
   };
@@ -65,34 +67,34 @@ const VerifyPassword = () => {
   const handlePaste = (e: React.ClipboardEvent<HTMLInputElement>) => {
     e.preventDefault();
     const pastedValue = e.clipboardData
-      .getData("text")
-      .replace(/\D/g, "")
+      .getData('text')
+      .replace(/\D/g, '')
       .slice(0, 6);
-    const newOtp = pastedValue.split("").concat(Array(6).fill("")).slice(0, 6);
+    const newOtp = pastedValue.split('').concat(Array(6).fill('')).slice(0, 6);
     setOtp(newOtp);
 
     // Focus on the next empty input or the last input
-    const lastFilledIndex = newOtp.findIndex((item) => item === "");
+    const lastFilledIndex = newOtp.findIndex(item => item === '');
     const focusIndex = lastFilledIndex === -1 ? 5 : lastFilledIndex;
     inputRefs.current[focusIndex]?.focus();
   };
 
-  const isOtpComplete = otp.every((item) => item !== "");
-  const hasStartedTyping = otp.some((item) => item !== "");
+  const isOtpComplete = otp.every(item => item !== '');
+  const hasStartedTyping = otp.some(item => item !== '');
 
   const handleVerify = async () => {
     if (isOtpComplete) {
       setIsVerifying(true);
       try {
         // Simulate API call
-        await new Promise((resolve) => setTimeout(resolve, 2000));
-        setVerificationStatus("success");
+        await new Promise(resolve => setTimeout(resolve, 2000));
+        setVerificationStatus('success');
         setTimeout(() => {
-          router.push("/newpassword");
+          router.push('/dashboard');
         }, 1000);
       } catch (error) {
-        setVerificationStatus("error");
-        setError("Invalid verification code");
+        setVerificationStatus('error');
+        setError('Invalid verification code');
       } finally {
         setIsVerifying(false);
       }
@@ -102,9 +104,9 @@ const VerifyPassword = () => {
   const handleResendCode = () => {
     setCountdown(300);
     setCanResend(false);
-    setVerificationStatus("");
-    setError("");
-    setOtp(["", "", "", "", "", ""]);
+    setVerificationStatus('');
+    setError('');
+    setOtp(['', '', '', '', '', '']);
     setTimeout(() => {
       inputRefs.current[0]?.focus();
     }, 100);
@@ -143,14 +145,14 @@ const VerifyPassword = () => {
             {otp.map((item, index) => (
               <input
                 key={index}
-                ref={(el) => {
+                ref={el => {
                   inputRefs.current[index] = el;
                 }}
                 type="text"
                 inputMode="numeric"
                 maxLength={1}
-                onChange={(e) => handleInputChange(index, e.target.value)}
-                onKeyDown={(e) => handleKeyDown(e, index)}
+                onChange={e => handleInputChange(index, e.target.value)}
+                onKeyDown={e => handleKeyDown(e, index)}
                 onPaste={index === 0 ? handlePaste : undefined}
                 value={item}
                 className="h-12 w-12 rounded-md border-2 border-gray-300 text-center text-lg font-bold text-purple-600 transition-all duration-200 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500 disabled:cursor-not-allowed disabled:opacity-50 sm:h-14 sm:w-14 sm:text-xl"
@@ -161,7 +163,7 @@ const VerifyPassword = () => {
           </div>
 
           {/* Error Message */}
-          {verificationStatus === "error" && (
+          {verificationStatus === 'error' && (
             <div className="flex items-center justify-center gap-2 text-red-600">
               <svg
                 className="h-5 w-5 flex-shrink-0"
@@ -183,12 +185,12 @@ const VerifyPassword = () => {
             onClick={handleVerify}
             disabled={!hasStartedTyping || isVerifying}
             className={`flex w-full items-center justify-center gap-2 rounded-lg py-3 px-4 font-medium text-white transition-all duration-200 ${
-              verificationStatus === "success"
-                ? "bg-green-500 hover:bg-green-600"
-                : "bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700"
+              verificationStatus === 'success'
+                ? 'bg-green-500 hover:bg-green-600'
+                : 'bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700'
             } disabled:cursor-not-allowed disabled:opacity-50`}
           >
-            {verificationStatus === "success" ? (
+            {verificationStatus === 'success' ? (
               <>
                 <CiCircleCheck className="h-5 w-5" />
                 <span className="text-sm sm:text-base">
@@ -209,7 +211,7 @@ const VerifyPassword = () => {
           <div className="text-center">
             {countdown > 0 ? (
               <p className="text-sm text-gray-500 sm:text-base">
-                Resend Code in{" "}
+                Resend Code in{' '}
                 <span className="font-medium text-[#6d47ff]">
                   {formatTime(countdown)}
                 </span>
@@ -226,11 +228,11 @@ const VerifyPassword = () => {
 
           {/* Terms and Privacy */}
           <p className="text-center text-xs leading-relaxed text-gray-500 sm:text-sm">
-            By joining, you agree with our{" "}
+            By joining, you agree with our{' '}
             <span className="cursor-pointer text-[#6d47ff] underline hover:opacity-80">
               Terms
-            </span>{" "}
-            and{" "}
+            </span>{' '}
+            and{' '}
             <span className="cursor-pointer text-[#6d47ff] underline hover:opacity-80">
               Privacy Policy
             </span>
@@ -242,4 +244,4 @@ const VerifyPassword = () => {
   );
 };
 
-export default VerifyPassword;
+export default ForgetPassword;
