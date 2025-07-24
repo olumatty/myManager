@@ -132,6 +132,6 @@ export const comparePassword = async (
  * @returns The generated token
  */
 
-export const generateVerificationToken = (): string => {
+export const generateVerificationCode = (): string => {
   return crypto.randomInt(100000, 999999).toString();
 };
