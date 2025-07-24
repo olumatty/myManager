@@ -1,6 +1,5 @@
 import winston from "winston";
 import { env } from "@/config/env";
-import { warn } from "console";
 
 const levels = {
   error: 0,
@@ -25,9 +24,13 @@ winston.addColors(colors);
 const developmentFormat = winston.format.combine(
   winston.format.timestamp({ format: "YYYY-MM-DD HH:mm:ss:ms" }),
   winston.format.colorize({ all: true }),
-  winston.format.printf(
-    (info) => `${info.timestamp} ${info.level}: ${info.message}`,
-  ),
+  winston.format.printf((info) => {
+    const { timestamp, level, message, ...args } = info;
+    const metadataString = Object.keys(args).length
+      ? `${JSON.stringify(args, null, 2)}`
+      : "";
+    return `${timestamp} ${level}: ${message}${metadataString}`;
+  }),
 );
 
 const productionFormat = winston.format.combine(
@@ -39,13 +42,11 @@ const productionFormat = winston.format.combine(
 const logger = winston.createLogger({
   level: env.NODE_ENV === "development" ? "debug" : "info",
   levels,
-  format: env.NODE_ENV === "development" ? developmentFormat : productionFormat,
   transports: [
     new winston.transports.Console({
-      format: winston.format.combine(
-        winston.format.colorize(),
-        winston.format.simple(),
-      ),
+      format:
+        env.NODE_ENV === "development" ? developmentFormat : productionFormat,
+      stderrLevels: ["error", "warn"],
     }),
   ],
   exitOnError: false,
@@ -61,14 +62,20 @@ const safeStringify = (obj: unknown): string => {
   try {
     return JSON.stringify(obj, (key, value) => {
       if (
-        typeof value === "string" &&
+        typeof key === "string" &&
         [
           "password",
           "token",
           "secret",
           "access_token",
           "refresh_token",
-          "clien_secret",
+          "client_secret",
+          "otp",
+          "otp_secret",
+          "otp_token",
+          "jwt",
+          "jwt_token",
+          "jwt_secret",
         ].includes(key.toLowerCase())
       ) {
         return "[REDACTED]";

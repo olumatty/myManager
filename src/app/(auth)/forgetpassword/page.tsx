@@ -7,7 +7,6 @@ import { useRouter } from "next/navigation";
 const ForgetPassword = () => {
   const [email, setEmail] = useState("");
   const [loading, setLoading] = useState(false);
-  const [error, setError] = useState("");
   const [message, setMessage] = useState("");
 
   const router = useRouter();

@@ -53,3 +53,10 @@ export const verifyPasswordSchema = z.object({
     password: z.string().min(8, "Password must be at least 8 characters long"),
   }),
 });
+
+export const googleCallbackSchema = z.object({
+  body: z.object({
+    code: z.string().min(1, "Authorization code is needed"),
+    state: z.string().min(1, "State parameter is needed"),
+  }),
+});
